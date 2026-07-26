@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Happy Birthday!</title>
+        <link rel="icon" type="image/x-icon" href="Dependencies/web-icon.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <button class="gif-container" id="gifButton">
+            <img id="btnImg" src="Dependencies/play button start.png" alt="Play Button">
+        </button>
+
+        <script>
+            const btnImg = document.getElementById('btnImg');
+            const gifBtn = document.getElementById('gifButton');
+
+            const staticSrc = "Dependencies/play button start.png";
+            const gifSrc = "Dependencies/play button.gif";
+            const finalFrameSrc = "Dependencies/play button end.png"; // Optional final frame image
+
+            // SET YOUR GIF DURATION IN MILLISECONDS (e.g., 2000 = 2 seconds)
+            const gifDuration = 2000; 
+
+            let timer = null;
+
+            // Play on hover
+            gifBtn.addEventListener('mouseenter', () => {
+                // Force GIF to play from the beginning
+                btnImg.src = gifSrc + "?t=" + Date.now();
+
+                // Swap to static final frame when GIF duration ends to prevent looping
+                timer = setTimeout(() => {
+                    btnImg.src = finalFrameSrc; 
+                }, gifDuration);
+            });
+
+            // Reset when mouse leaves
+            gifBtn.addEventListener('mouseleave', () => {
+                // Cancel timer if mouse leaves early
+                clearTimeout(timer); 
+
+                // Reset back to original static photo
+                btnImg.src = staticSrc;
+            });
+        </script>
+    </body>
+</html>
