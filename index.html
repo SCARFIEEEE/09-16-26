@@ -1,47 +1,47 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Happy Birthday!</title>
-        <link rel="icon" type="image/x-icon" href="Dependencies/web-icon.png">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <button class="gif-container" id="gifButton">
-            <img id="btnImg" src="Dependencies/play button start.png" alt="Play Button">
-        </button>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday!</title>
+    <link rel="icon" type="image/x-icon" href="Dependencies/web-icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        <script>
-            const btnImg = document.getElementById('btnImg');
-            const gifBtn = document.getElementById('gifButton');
+    <!-- Background Canvas -->
+    <canvas id="flowerCanvas"></canvas>
 
-            const staticSrc = "Dependencies/play button start.png";
-            const gifSrc = "Dependencies/play button.gif";
-            const finalFrameSrc = "Dependencies/play button end.png"; // Optional final frame image
+    <div class="page-wrapper">
+        <!-- Play Button Container -->
+        <div class="btn-container" id="buttonContainer">
+            <button class="gif-container" id="playButton" aria-label="Play experience">
+                <img id="btnImg" src="Dependencies/play button start.png" alt="Play Button">
+            </button>
+        </div>
 
-            // SET YOUR GIF DURATION IN MILLISECONDS (e.g., 2000 = 2 seconds)
-            const gifDuration = 2000; 
+        <!-- 3D Carousel Container -->
+        <div class="photo-frame hidden" id="photoFrame">
+            <div class="carousel-viewport" id="carouselViewport">
+                <div class="carrousel" id="carrousel"></div>
+            </div>
+        </div>
+    </div>
 
-            let timer = null;
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-card">
+            <button class="close-btn" id="closeModal" aria-label="Close modal">&times;</button>
+            <img id="modalImg" src="" alt="Modal View">
+            <div class="modal-content">
+                <h2 id="modalTitle">Title</h2>
+                <p id="modalDesc">Description</p>
+            </div>
+        </div>
+    </div>
 
-            // Play on hover
-            gifBtn.addEventListener('mouseenter', () => {
-                // Force GIF to play from the beginning
-                btnImg.src = gifSrc + "?t=" + Date.now();
+    <audio id="bgMusic" src="Dependencies/MYMP - Especially For You (Official Music Video).mp3" loop preload="auto"></audio>
 
-                // Swap to static final frame when GIF duration ends to prevent looping
-                timer = setTimeout(() => {
-                    btnImg.src = finalFrameSrc; 
-                }, gifDuration);
-            });
-
-            // Reset when mouse leaves
-            gifBtn.addEventListener('mouseleave', () => {
-                // Cancel timer if mouse leaves early
-                clearTimeout(timer); 
-
-                // Reset back to original static photo
-                btnImg.src = staticSrc;
-            });
-        </script>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
