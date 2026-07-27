@@ -19,9 +19,7 @@ const galleryData = [
     }
 ];
 
-// ==========================================
-// 2. DOM ELEMENTS
-// ==========================================
+//kill me//
 const canvas = document.getElementById('flowerCanvas');
 const ctx = canvas.getContext('2d');
 const playButton = document.getElementById('playButton');
@@ -45,7 +43,7 @@ let startX = 0;
 let dragDistance = 0;
 let deviceDPR = window.devicePixelRatio || 1;
 
-// Dynamically scale 3D radius based on screen width
+// kill me part 2
 function getCalculatedRadius(totalItems) {
     const isMobile = window.innerWidth < 600;
     const cardWidth = isMobile ? Math.min(window.innerWidth * 0.7, 240) : 300;
@@ -72,7 +70,7 @@ function buildCarousel() {
             </div>
         `;
 
-        // Handle Tap / Click on cards
+        //pag clinick yung pics
         item.addEventListener('click', (e) => {
             if (Math.abs(dragDistance) < 6) {
                 modalImg.src = itemData.src;
@@ -93,9 +91,7 @@ window.addEventListener('resize', () => {
     resizeCanvas();
 });
 
-// ==========================================
-// 3. TOUCH & MOUSE ROTATION CONTROLS
-// ==========================================
+//gallery ig
 
 function autoRotateCarousel() {
     if (autoRotate && !photoFrame.classList.contains('hidden') && !modalOverlay.classList.contains('active')) {
@@ -106,14 +102,14 @@ function autoRotateCarousel() {
 }
 autoRotateCarousel();
 
-// Mouse Wheel Interaction
+//scrolling breh
 window.addEventListener('wheel', (e) => {
     if (modalOverlay.classList.contains('active') || photoFrame.classList.contains('hidden')) return;
     currentRotation += e.deltaY * 0.12;
     carrousel.style.transform = `rotateY(${currentRotation}deg)`;
 }, { passive: true });
 
-// Universal Pointer Dragging (Touch + Mouse)
+//idek what ts is
 const getClientX = (e) => (e.touches && e.touches.length > 0) ? e.touches[0].clientX : e.clientX;
 
 const startDrag = (e) => {
@@ -139,7 +135,7 @@ const stopDrag = () => {
     autoRotate = true;
 };
 
-// Pointer & Touch Events
+//mostly mouse controls
 carouselViewport.addEventListener('mousedown', startDrag);
 window.addEventListener('mousemove', moveDrag);
 window.addEventListener('mouseup', stopDrag);
@@ -148,7 +144,7 @@ carouselViewport.addEventListener('touchstart', startDrag, { passive: true });
 window.addEventListener('touchmove', moveDrag, { passive: true });
 window.addEventListener('touchend', stopDrag);
 
-// Modal Controls
+//huh
 closeModal.addEventListener('click', () => modalOverlay.classList.remove('active'));
 modalOverlay.addEventListener('click', (e) => {
     if (e.target === modalOverlay) modalOverlay.classList.remove('active');
@@ -459,7 +455,6 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-// On Click / Tap Trigger
 playButton.addEventListener('click', () => {
     clearTimeout(timer);
     const rect = playButton.getBoundingClientRect();
@@ -474,7 +469,7 @@ playButton.addEventListener('click', () => {
     flowerArray = Array.from({ length: lilyCount }, () => new Lily(null, null, true));
     triggerExplosion(x, y);
 
-    // Audio unlock for mobile browsers
+    //mobile if shits outta hand
     bgMusic.play().catch(err => console.log("Audio playback held: ", err));
 });
 
