@@ -1,18 +1,18 @@
 const galleryData = [
     {
-        src: "dependencies/1.png",
+        src: "Dependencies/1.png",
         caption: "April 23, 2026",
         title: "April 23, 2026",
         desc: ""
     },
     {
-        src: "dependencies/2.png",
+        src: "Dependencies/2.png",
         caption: "June 13, 2026",
         title: "June 13, 2026",
         desc: ""
     },
     {
-        src: "dependencies/3.png",
+        src: "Dependencies/3.png",
         caption: "June 23, 2026",
         title: "June 23, 2026",
         desc: ""
