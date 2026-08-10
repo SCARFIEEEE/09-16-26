@@ -97,8 +97,8 @@ body, html {
 }
 
 .carousel-viewport {
-    width: clamp(260px, 80vw, 360px);
-    height: clamp(200px, 50vh, 280px);
+    width: clamp(320px, 85vw, 450px);  /* Increased width */
+    height: clamp(260px, 55vh, 360px); /* Increased height */
     position: relative;
     perspective: 1000px;
     cursor: grab;
@@ -123,10 +123,10 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center; 
-    width: clamp(220px, 70vw, 320px);
-    height: clamp(160px, 42vh, 240px);
-    left: calc(50% - clamp(110px, 35vw, 160px));
-    top: calc(50% - clamp(80px, 21vh, 120px));
+    width: clamp(280px, 75vw, 380px);  /* Increased card width */
+    height: clamp(200px, 45vh, 300px); /* Increased card height */
+    left: calc(50% - clamp(140px, 37.5vw, 190px)); /* Half of card width */
+    top: calc(50% - clamp(100px, 22.5vh, 150px));  /* Half of card height */
     border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
@@ -170,7 +170,7 @@ body, html {
 }
 
 .slide-caption h3 {
-    font-size: 0.85rem;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 

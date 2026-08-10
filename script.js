@@ -20,9 +20,9 @@ const galleryData = [
     {
         src: "Dependencies/4.png",
         caption: "August 8, 2026",
-        title: "August8, 2026",
+        title: "August 8, 2026",
         desc: ""
-    }
+    },
 ];
 
 //kill me//
@@ -52,8 +52,9 @@ let deviceDPR = window.devicePixelRatio || 1;
 // kill me part 2
 function getCalculatedRadius(totalItems) {
     const isMobile = window.innerWidth < 600;
-    const cardWidth = isMobile ? Math.min(window.innerWidth * 0.7, 240) : 300;
-    return Math.max(isMobile ? 160 : 220, Math.round((cardWidth / 2) / Math.tan(Math.PI / totalItems)));
+    // Update cardWidth values to match your CSS clamp limits
+    const cardWidth = isMobile ? Math.min(window.innerWidth * 0.75, 280) : 380; 
+    return Math.max(isMobile ? 200 : 300, Math.round((cardWidth / 2) / Math.tan(Math.PI / totalItems)));
 }
 
 function buildCarousel() {
