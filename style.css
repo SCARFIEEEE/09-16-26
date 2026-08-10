@@ -37,7 +37,6 @@ body, html {
     z-index: 2;
 }
 
-/* Play Button */
 .btn-container {
     position: absolute;
     z-index: 3;
@@ -132,7 +131,6 @@ body, html {
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0 12px 30px #ff8fab;
-    border: 3px solid #ffb3c6;
     background: #ffb3c6;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -165,7 +163,7 @@ body, html {
     right: 0;
     padding: 10px;
     background: linear-gradient(to top, #ff8fab, transparent);
-    color: #ffffff;
+    color: #f3567d;
     transform: translateY(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;

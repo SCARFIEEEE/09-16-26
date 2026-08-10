@@ -3,7 +3,7 @@ const galleryData = [
         src: "Dependencies/1.png",
         caption: "April 23, 2026",
         title: "April 23, 2026",
-        desc: ""
+        desc: "This was the first time I photographed you. I was really scared to talk to you first since I thought you’d be unapproachable, but I guess I’m wrong, this may sound cliche but you’re the most approachable and sweet girl I’ve ever met."
     },
     {
         src: "Dependencies/2.png",
@@ -154,9 +154,6 @@ window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') modalOverlay.classList.remove('active');
 });
 
-// ==========================================
-// 4. GIF BUTTON & AUDIO LOGIC
-// ==========================================
 const staticSrc = "Dependencies/play button start.png";
 const gifSrc = "Dependencies/play button.gif";
 const finalFrameSrc = "Dependencies/play button end.png";
