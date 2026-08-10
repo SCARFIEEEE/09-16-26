@@ -16,6 +16,12 @@ const galleryData = [
         caption: "June 23, 2026",
         title: "June 23, 2026",
         desc: ""
+    },
+    {
+        src: "Dependencies/4.png",
+        caption: "August 8, 2026",
+        title: "August8, 2026",
+        desc: ""
     }
 ];
 
@@ -95,7 +101,7 @@ window.addEventListener('resize', () => {
 
 function autoRotateCarousel() {
     if (autoRotate && !photoFrame.classList.contains('hidden') && !modalOverlay.classList.contains('active')) {
-        currentRotation += 0.2;
+        currentRotation -= 0.2;
         carrousel.style.transform = `rotateY(${currentRotation}deg)`;
     }
     requestAnimationFrame(autoRotateCarousel);
@@ -105,7 +111,7 @@ autoRotateCarousel();
 //scrolling breh
 window.addEventListener('wheel', (e) => {
     if (modalOverlay.classList.contains('active') || photoFrame.classList.contains('hidden')) return;
-    currentRotation += e.deltaY * 0.12;
+    currentRotation -= e.deltaY * 0.12;
     carrousel.style.transform = `rotateY(${currentRotation}deg)`;
 }, { passive: true });
 
