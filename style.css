@@ -9,7 +9,7 @@ body, html {
     width: 100%;
     height: 100%;
     background: radial-gradient(#f7ccd8, #ffb3c6, #ff8fab);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: system-ui, "Segoe UI", sans-serif;
     overflow: hidden;
     user-select: none;
     -webkit-user-select: none;
@@ -97,8 +97,8 @@ body, html {
 }
 
 .carousel-viewport {
-    width: clamp(320px, 85vw, 450px);  /* Increased width */
-    height: clamp(260px, 55vh, 360px); /* Increased height */
+    width: clamp(320px, 85vw, 450px);  
+    height: clamp(260px, 55vh, 360px); 
     position: relative;
     perspective: 1000px;
     cursor: grab;
@@ -123,10 +123,10 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center; 
-    width: clamp(280px, 75vw, 380px);  /* Increased card width */
-    height: clamp(200px, 45vh, 300px); /* Increased card height */
-    left: calc(50% - clamp(140px, 37.5vw, 190px)); /* Half of card width */
-    top: calc(50% - clamp(100px, 22.5vh, 150px));  /* Half of card height */
+    width: clamp(280px, 75vw, 380px);
+    height: clamp(200px, 45vh, 300px);
+    left: calc(50% - clamp(140px, 37.5vw, 190px));
+    top: calc(50% - clamp(100px, 22.5vh, 150px)); 
     border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
@@ -170,7 +170,7 @@ body, html {
 }
 
 .slide-caption h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
 }
 
@@ -238,6 +238,7 @@ body, html {
     font-size: 0.9rem;
     color: #9f1239;
     line-height: 1.4;
+    text-align: justify;
 }
 
 .close-btn {

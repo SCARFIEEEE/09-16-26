@@ -3,25 +3,25 @@ const galleryData = [
         src: "Dependencies/1.png",
         caption: "April 23, 2026",
         title: "April 23, 2026",
-        desc: "This was the first time I photographed you. I was really scared to talk to you first since I thought you’d be unapproachable, but I guess I’m wrong, this may sound cliche but you’re the most approachable and sweet girl I’ve ever met."
+        desc: "This was the first time I photographed you. I was really scared to talk to you first since I thought you’d be unapproachable, but I guess I’m wrong, this may sound cliche but you’re the most approachable and sweetest girl I’ve ever met."
     },
     {
         src: "Dependencies/2.png",
         caption: "June 13, 2026",
         title: "June 13, 2026",
-        desc: ""
+        desc: "This was so unexpected since nahatak lang din ako ni Dan. Anyhow, "
     },
     {
         src: "Dependencies/3.png",
         caption: "June 23, 2026",
         title: "June 23, 2026",
-        desc: ""
+        desc: "Medyo sponti na hindi? I was planning to go out with you but couldn't see an oportunity so I tried to ask you there"
     },
     {
         src: "Dependencies/4.png",
         caption: "August 8, 2026",
         title: "August 8, 2026",
-        desc: ""
+        desc: "Even though of the bad weather, we still managed to go out. It's actually my first time going to the movie with someone, especially someone I like. I actually had a hard time focusing on the movie cause I kept looking at you."
     },
 ];
 
@@ -98,11 +98,11 @@ window.addEventListener('resize', () => {
     resizeCanvas();
 });
 
-//gallery ig
+//gallery ig (speed)
 
 function autoRotateCarousel() {
     if (autoRotate && !photoFrame.classList.contains('hidden') && !modalOverlay.classList.contains('active')) {
-        currentRotation -= 0.2;
+        currentRotation -= 0.25;
         carrousel.style.transform = `rotateY(${currentRotation}deg)`;
     }
     requestAnimationFrame(autoRotateCarousel);
@@ -116,7 +116,7 @@ window.addEventListener('wheel', (e) => {
     carrousel.style.transform = `rotateY(${currentRotation}deg)`;
 }, { passive: true });
 
-//idek what ts is
+//heh
 const getClientX = (e) => (e.touches && e.touches.length > 0) ? e.touches[0].clientX : e.clientX;
 
 const startDrag = (e) => {
