@@ -28,7 +28,8 @@ const galleryData = [
         desc: "Despite the bad weather, we still managed to go out. It was my first time going to the movies with someone, especially someone I like. I could barely focus on the movie because I kept looking at you :^. You are so beautiful, especially when your hair is curly."
     },  
     {
-        type: "letter",
+        type: "photo",
+        src: "Dependencies/Letter.png",
         caption: "",
         title: "Happy Birthday!",
         desc: "Happiest birthday to the sweetest girl ever! Enjoy your day, and I wish you the very best. You know, I'm not really good with words, halata naman :^). Ayun lang naman, I really like you, and thankful ako kasi you've been there every day. Ibabalik ko rin 'yung sinabi mo sa 'kin, you really make my days easier. I hope you know I'll always be here if you need someone to talk to, oki? You know, I really thought I'd never get this close to you, but I'm thankful I did. You really are the most beautiful, sweetest, and most genuine person I've ever met, and I wish you the very best ^-^."
