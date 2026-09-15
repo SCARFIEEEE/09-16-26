@@ -1,28 +1,38 @@
 const galleryData = [
     {
+        type: "photo",
         src: "Dependencies/1.png",
         caption: "April 23, 2026",
         title: "April 23, 2026",
-        desc: "This was the first time I photographed you. I was really scared to talk to you first since I thought you’d be unapproachable, but I guess I’m wrong, this may sound cliche but you’re the most approachable and sweetest girl I’ve ever met."
+        desc: "This was the first time I took your photo. I was really nervous to approach you at first, thinking you’d be hard to talk to, but I couldn't have been more wrong. It might sound cliché, but you are truly the sweetest and most approachable person I’ve ever met."
     },
     {
+        type: "photo",
         src: "Dependencies/2.png",
         caption: "June 13, 2026",
         title: "June 13, 2026",
-        desc: "This was so unexpected since nahatak lang din ako ni Dan. Anyhow, "
+        desc: "This was so unexpected since nahatak lang din ako ni Dan. Anyhow, I had a lot of fun this day kahit na unprepared ako sobra TwT. It was our first time going out together, even with other Dan around, and I truly enjoyed it ^-^."
     },
     {
+        type: "photo",
         src: "Dependencies/3.png",
         caption: "June 23, 2026",
         title: "June 23, 2026",
-        desc: "Medyo sponti na hindi? I was planning to go out with you but couldn't see an oportunity so I tried to ask you there"
+        desc: "Medyo sponti na hindi? I was planning to go out with you but couldn't find the right opportunity, so I just went for it and asked. I was so happy when you agreed :>. This was our first time going to a photobooth together, which made it extra special for me."
     },
     {
+        type: "photo",
         src: "Dependencies/4.png",
         caption: "August 8, 2026",
         title: "August 8, 2026",
-        desc: "Even though of the bad weather, we still managed to go out. It's actually my first time going to the movie with someone, especially someone I like. I actually had a hard time focusing on the movie cause I kept looking at you."
-    },
+        desc: "Despite the bad weather, we still managed to go out. It was my first time going to the movies with someone, especially someone I like. I could barely focus on the movie because I kept looking at you :^. You are so beautiful, especially when your hair is curly."
+    },  
+    {
+        type: "letter",
+        caption: "A Letter For You",
+        title: "Happy Birthday!",
+        desc: "Happiest Birthday to the sweetest girl ever! Enjoy your day, and I hope you know I'll always be here cheering you on. "
+    }
 ];
 
 //kill me//
@@ -68,19 +78,31 @@ function buildCarousel() {
         
         const item = document.createElement('div');
         item.className = 'carrousel-item';
+        if (itemData.type === 'letter') {
+            item.classList.add('letter-item');
+        }
         item.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
 
+        const innerContent = itemData.type === 'letter' 
+            ? `<div class="letter-card-preview">💌 <span>Read Me</span></div>`
+            : `<img src="${itemData.src}" alt="${itemData.caption}">`;
+
         item.innerHTML = `
-            <img src="${itemData.src}" alt="${itemData.caption}">
+            ${innerContent}
             <div class="slide-caption">
                 <h3>${itemData.caption}</h3>
             </div>
         `;
 
-        //pag clinick yung pics
+        //pag clinick yung pics/letter
         item.addEventListener('click', (e) => {
             if (Math.abs(dragDistance) < 6) {
-                modalImg.src = itemData.src;
+                if (itemData.type === 'letter') {
+                    modalImg.style.display = 'none';
+                } else {
+                    modalImg.style.display = 'block';
+                    modalImg.src = itemData.src;
+                }
                 modalTitle.textContent = itemData.title;
                 modalDesc.textContent = itemData.desc;
                 modalOverlay.classList.add('active');

@@ -265,3 +265,24 @@ body, html {
 .close-btn:active {
     transform: scale(0.95);
 }
+
+.carrousel-item.letter-item {
+    background: #fff0f3;
+    border: 3px dashed #ff8fab;
+}
+
+.letter-card-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: #831843;
+    gap: 8px;
+}
+
+.letter-card-preview span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #9f1239;
+}
